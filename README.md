@@ -1,3 +1,6 @@
+[![OSE Lab cataloged](https://img.shields.io/badge/OSE--Lab-catalogued-critical.svg)](https://www.oselab.org/gallery)
+[![Python 3.7.4+](https://img.shields.io/badge/python-3.7.4%2B-blue.svg)](https://www.python.org/downloads/release/python-374/)
+
 # Normalized Peak Plot of Dow Jones Industrial Average (DJIA)
 The code in this repository allows the user to create a normalized peak plot of the Dow Jones Industrial Average (DJIA) over the last 15 recessions, from the Great Depression (Aug. 1929 to Mar. 1933) to the current COVID-19 recession (likely started in March 2020). The dynamic version of this plot, which is updated regularly, is available to manipulate and explore at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth).
 
@@ -8,4 +11,6 @@ A normalized peak plot takes the maximum level of the DJIA at the beginning of a
 ## Running the code and generating the dynamic visualization
 The code for creating this visualization is written in the [Python](https://www.python.org/) programming language. It requires the following two files:
 * [`get_djia_data.py`](get_djia_data.py): a Python module that can either retrieve the DJIA data from [Stooq.com](https://stooq.com/) over the internet or retrieve the data from a file saved previously on your local hard drive in the [data](data/) directory of this repository.
-* [`djia_npp_bokeh.py`](djia_npp_bokeh.py): a Python script that creates the dynamic visualization of the normalized peak plot of the DJIA over the last 15 recessions. This script calls the [`get_djia_data()`]() function from the [`get_djia_data.py`](get_djia_data.py) module. It then uses the [`Bokeh`](https://bokeh.org/) library to create a dynamic visualization using HTML and JavaScript to render the visualization in a web browser.
+* [`djia_npp_bokeh.py`](djia_npp_bokeh.py): a Python script that creates the dynamic visualization of the normalized peak plot of the DJIA over the last 15 recessions. This script calls the [`get_djia_data()`](get_djia_data.py#L33) function from the [`get_djia_data.py`](get_djia_data.py) module. It then uses the [`Bokeh`](https://bokeh.org/) library to create a dynamic visualization using HTML and JavaScript to render the visualization in a web browser.
+
+The most standard way to successfully run this code is to install and activate the `djia-npp` [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html), then run the [`djia_npp_bokeh.py`](djia_npp_bokeh.py) Python script using the appropriate options.
