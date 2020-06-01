@@ -47,4 +47,7 @@ This dynamic visualization allows the user to customize some different views and
 * <img src="readme_images/Reset.png" width=18 align=center> Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button <img src="readme_images/Reset.png" width=18 align=center> on the left side of the plot.
 
 ## 3. Contributing to this visualization code
-If you find errors or bugs in this code or wish to improve or enhance the visualization, please consider browsing the repository Issues or submitting a pull request with your proposed changes.
+If you wish to improve or enhance this code or if you find errors or bugs, please consider the following ways to contribute to this project.
+* Browse the repository [Issues](issues) for know areas that need attention
+* Submit questions or suggestions by submitting a new issue in the repository [Issues](issues)
+* Submit a pull request with your proposed changes
