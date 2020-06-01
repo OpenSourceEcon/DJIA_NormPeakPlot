@@ -7,12 +7,16 @@ from the current 2020 Coronavirus recession to the Great Depression of
 
 This Python script uses the following data:
     Downloads ^DJI data series from Stooq.com
-    data/djia_close_pk_[end_date_str].txt
+    data/djia_close_pk_[end_date_str].csv
 
 This Python module imports the following module(s): None
 
 This Python module defines the following function(s):
     get_djia_data()
+
+This Python module creates the following data:
+    data/djia_close_[end_date_str].csv
+    data/djia_close_pk_[end_date_str].csv
 '''
 # Import packages
 import numpy as np
@@ -42,11 +46,11 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str='today',
             otherwise read date in from local directory
 
     Other functions and files called by this function:
-        djia_close_[yyyy-mm-dd].txt
+        djia_close_[yyyy-mm-dd].csv
 
     Files created by this function:
-        djia_close_[yyyy-mm-dd].txt
-        djia_close_pk_[yyyy-mm-dd].txt
+        djia_close_[yyyy-mm-dd].csv
+        djia_close_pk_[yyyy-mm-dd].csv
 
     Returns:
         djia_close_pk (DataFrame): N x 46 DataFrame of days_frm_peak, Date{i},
@@ -80,8 +84,8 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str='today',
     if not os.access(data_dir, os.F_OK):
         os.makedirs(data_dir)
 
-    filename_basic = ('data/djia_close_' + end_date_str + '.txt')
-    filename_full = ('data/djia_close_pk_' + end_date_str + '.txt')
+    filename_basic = ('data/djia_close_' + end_date_str + '.csv')
+    filename_full = ('data/djia_close_pk_' + end_date_str + '.csv')
 
     if download_from_internet:
         # Download the DJIA data directly from Stooq.com
