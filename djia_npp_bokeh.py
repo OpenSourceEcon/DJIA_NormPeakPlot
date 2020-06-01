@@ -6,7 +6,7 @@ the Great Depression of 1929, using Bokeh.
 
 This script imports the following module(s):
     get_djia_data.py
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 '''
 # Import packages
 import numpy as np
@@ -20,9 +20,9 @@ from bokeh.models import ColumnDataSource, Title, Legend, HoverTool
 from bokeh.palettes import Category20
 
 '''
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 Create normalized peak plot bokeh image
-------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 '''
 
 # Create directory if images directory does not already exist
