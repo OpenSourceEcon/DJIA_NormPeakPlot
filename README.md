@@ -1,4 +1,4 @@
-[![OSE Lab cataloged](https://img.shields.io/badge/OSE--Lab-catalogued-critical.svg)](https://www.oselab.org/gallery)
+[![OSE Lab cataloged](https://img.shields.io/badge/OSE%20Lab-catalogued-critical)](https://www.oselab.org/gallery)
 [![Python 3.7.4+](https://img.shields.io/badge/python-3.7.4%2B-blue.svg)](https://www.python.org/downloads/release/python-374/)
 
 # Normalized Peak Plot of Dow Jones Industrial Average (DJIA)
