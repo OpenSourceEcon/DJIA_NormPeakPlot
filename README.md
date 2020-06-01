@@ -44,6 +44,6 @@ This dynamic visualization allows the user to customize some different views and
 ![](readme_images/DJIA_NPP_mth_zoomout.png)
 * [] Save current view of data as .png file. You can save your current view of the data as a .png file to your local hard drive by clicking on the save button [] on the left side of the plot.
 * [][] Undo and redo actions. You can undo or redo any of the plot changes that you make using the undo button [] or the redo button [] on the left side of the plot.
-* <img src="readme_images/Reset.png" width=50 align=centert> Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button ![](readme_images/Reset.png) on the left side of the plot.
+* <img src="readme_images/Reset.png" width=15 align=centert> Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button ![](readme_images/Reset.png) on the left side of the plot.
 
 ## 3. Contributing to this visualization code
