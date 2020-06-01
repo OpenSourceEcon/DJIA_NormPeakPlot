@@ -6,7 +6,7 @@ The code in this repository allows the user to create a normalized peak plot of 
 
 A normalized peak plot takes the maximum level of the DJIA at the beginning of a recession (within two months of the NBER declared beginning month) and normalizes the entire series so that the value at that peak equals 1.0. As such, the normalized time series shows the percent change from that peak. This is an intuitive way to compare the progression of average stock prices across recessions. The following figure is a screen shot of the normalized peak plot of the DJIA from May 29, 2020.
 
-![](images/DJIA_NPP_mth_full.png)
+![](readme_images/DJIA_NPP_mth_full.png)
 
 This `README.md` is organized into the following three sections.
 1. [Running the code and generating the dynamic visualization](README.md#1-running-the-code-and-generating-the-dynamic-visualization)
@@ -36,14 +36,14 @@ The most standard way to successfully run this code if you are using the [Anacon
 ## 2. Functionality of the dynamic visualization
 This dynamic visualization allows the user to customize some different views and manipulations of the data using the following functionalities. The default view of the visualization is shown above.
 * Highlight or mute specific recession time series by clicking on the series label in the legend on the right side of the plot. The screen shot below shows a version of the plot in which all the recession time series have been muted except for the current COVID-19 recession and the Great Depression. Note that even when muted, the time series are still faintly visible.
-![](images/DJIA_NPP_mth_muted.png)
+![](readme_images/DJIA_NPP_mth_muted.png)
 * [] Hovertool display. If you select the hovertool button [] on the left side of the plot, which is the default for the plot, information about each point in each time series will be displayed when you hover your cursor over a given point in the plot area. The screen shot below shows a version of the plot in which the hovertool is selected and the information about the minimum point in the current recession is displayed.
-![](images/DJIA_NPP_mth_hover.png)
+![](readme_images/DJIA_NPP_mth_hover.png)
 * [] Pan different areas of the data. If you click on the pan button [] on the left side of the plot, you can use your cursor to click and drag on the data window and change your view of the data.
 * [][][] Zoom in or out on the data. You can zoom in or zoom out on the data series in three different ways. You can use the box zoom functionality by clicking on its button [] on the left side of the plot and clicking and dragging a box on the area of the plot that you want to zoom in on. You can also zoom in by clicking on the zoom in button [] on the left side of the plot, then clicking on the area of the plot you want to center your zoom in around. Or you can zoom out by clicking on the zoom out button [] on the left side of the plot, then clicking on the area of the plot you want to center your zoom out around.The screen shot below shows a zoomed out version of the plot.
-![](images/DJIA_NPP_mth_zoomout.png)
+![](readme_images/DJIA_NPP_mth_zoomout.png)
 * [] Save current view of data as .png file. You can save your current view of the data as a .png file to your local hard drive by clicking on the save button [] on the left side of the plot.
 * [][] Undo and redo actions. You can undo or redo any of the plot changes that you make using the undo button [] or the redo button [] on the left side of the plot.
-* [] Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button [] on the left side of the plot.
+* ![](readme_images/Reset.png) Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button ![](readme_images/Reset.png) on the left side of the plot.
 
 ## 3. Contributing to this visualization code
