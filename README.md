@@ -2,13 +2,18 @@
 [![Python 3.7.4+](https://img.shields.io/badge/python-3.7.4%2B-blue.svg)](https://www.python.org/downloads/release/python-374/)
 
 # Normalized Peak Plot of Dow Jones Industrial Average (DJIA)
-The code in this repository allows the user to create a normalized peak plot of the Dow Jones Industrial Average (DJIA) over the last 15 recessions, from the Great Depression (Aug. 1929 to Mar. 1933) to the current COVID-19 recession (likely started in March 2020). The dynamic version of this plot, which is updated regularly, is available to manipulate and explore at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth).
+The code in this repository allows the user to create a normalized peak plot of the Dow Jones Industrial Average (DJIA) over the last 15 recessions, from the Great Depression (Aug. 1929 to Mar. 1933) to the current COVID-19 recession (likely started in March 2020). The dynamic version of this plot, which is updated regularly, is available to manipulate and explore at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth). [Richard Evans](https://sites.google.com/site/rickecon/) [@RickEcon](https://github.com/rickecon) is the core maintainer of this repository.
 
 A normalized peak plot takes the maximum level of the DJIA at the beginning of a recession (within two months of the NBER declared beginning month) and normalizes the entire series so that the value at that peak equals 1.0. As such, the normalized time series shows the percent change from that peak. This is an intuitive way to compare the progression of average stock prices across recessions. The following figure is a screen shot of the normalized peak plot of the DJIA from May 29, 2020.
 
 ![](images/DJIA_NPP_mth_full.png)
 
-## Running the code and generating the dynamic visualization
+This `README.md` is organized into the following three sections.
+1. [Running the code and generating the dynamic visualization](README.md#running-the-code-and-generating-the-dynamic-visualization)
+2. [Functionality of the dynamic visualization](README.md#functionality-of-the-dynamic-visualization)
+3. [Contributing to this visualization code](README.md#contributing-to-this-visualization-code)
+
+## 1. Running the code and generating the dynamic visualization
 The code for creating this visualization is written in the [Python](https://www.python.org/) programming language. It requires the following two files:
 * [`get_djia_data.py`](get_djia_data.py): a Python module that can either retrieve the DJIA data from [Stooq.com](https://stooq.com/) over the internet or retrieve the data from a file saved previously on your local hard drive in the [data](data/) directory of this repository.
 * [`djia_npp_bokeh.py`](djia_npp_bokeh.py): a Python script that creates the dynamic visualization of the normalized peak plot of the DJIA over the last 15 recessions. This script calls the [`get_djia_data()`](get_djia_data.py#L33) function from the [`get_djia_data.py`](get_djia_data.py) module. It then uses the [`Bokeh`](https://bokeh.org/) library to create a dynamic visualization using HTML and JavaScript to render the visualization in a web browser.
@@ -28,5 +33,16 @@ The most standard way to successfully run this code if you are using the [Anacon
     * [**data/djia_close_[YYYY-mm-dd].csv**](data/djia_close_2020-05-29.csv). A comma separated values data file of the original time series of the DJIA from 1896-05-27 to whatever end date is specified in [lines 36 and 42-44](djia_npp_bokeh.py#L36), which is also the final 10 characters of the file name `YYYY-mm-dd`.
     * [**data/djia_close_pk_[YYYY-mm-dd].csv**](data/djia_close_pk_2020-05-29.csv).
 
-## Functionality of the dynamic visualization
-This dynamic visualization allows the user to customize some different views and manipulations of the data using the following functionalities.
+## 2. Functionality of the dynamic visualization
+This dynamic visualization allows the user to customize some different views and manipulations of the data using the following functionalities. The default view of the visualization is shown above.
+* Highlight or mute specific recession time series by clicking on the series label in the legend on the right side of the plot. The screen shot below shows a version of the plot in which all the recession time series have been muted except for the current COVID-19 recession and the Great Depression. Note that even when muted, the time series are still faintly visible.
+![](images/DJIA_NPP_mth_muted.png)
+* [] Hovertool display. If you select the hovertool button [] on the left side of the plot, which is the default for the plot, information about each point in each time series will be displayed when you hover your cursor over a given point in the plot area. The screen shot below shows a version of the plot in which the hovertool is selected and the information about the minimum point in the current recession is displayed.
+![](images/DJIA_NPP_mth_hover.png)
+* [] Pan different areas of the data. If you click on the pan button [] on the left side of the plot, you can use your cursor to click and drag on the data window and change your view of the data.
+* [][][] Zoom in or out on the data. You can zoom in or zoom out on the data series in three different ways. You can use the box zoom functionality by clicking on its button [] on the left side of the plot and clicking and dragging a box on the area of the plot that you want to zoom in on. You can also zoom in by clicking on the zoom in button [] on the left side of the plot, then clicking on the area of the plot you want to center your zoom in around. Or you can zoom out by clicking on the zoom out button [] on the left side of the plot, then clicking on the area of the plot you want to center your zoom out around.
+* [] Save current view of data as .png file. You can save your current view of the data as a .png file to your local hard drive by clicking on the save button [] on the left side of the plot.
+* [][] Undo and redo actions. You can undo or redo any of the plot changes that you make using the undo button [] or the redo button [] on the left side of the plot.
+* [] Reset the plot. After any changes you make to the plot, you can reset it to its original position by using the reset button [] on the left side of the plot.
+
+## 3. Contributing to this visualization code
