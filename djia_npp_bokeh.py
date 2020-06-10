@@ -129,7 +129,7 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
          '1990-1991',  # (Jul 1990 - Mar 1991)
          '2001',       # (Mar 2001 - Nov 2001)
          '2007-2009',  # (Dec 2007 - Jun 2009) Great Recession
-         '2020-pres']  # (Mar 2020 - present) Coronavirus recession
+         '2020-pres']  # (Feb 2020 - present) Coronavirus recession
 
     rec_label_yrmth_lst = ['Aug 1929 - Mar 1933',  # Great Depression
                            'May 1937 - Jun 1938',
@@ -145,12 +145,12 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
                            'Jul 1990 - Mar 1991',
                            'Mar 2001 - Nov 2001',
                            'Dec 2007 - Jun 2009',  # Great Recession
-                           'Mar 2020 - present']  # Coronavirus recess'n
+                           'Feb 2020 - present']  # Coronavirus recess'n
 
     rec_beg_yrmth_lst = ['Aug 1929', 'May 1937', 'Feb 1945', 'Nov 1948',
                          'Jul 1953', 'Aug 1957', 'Apr 1960', 'Dec 1969',
                          'Nov 1973', 'Jan 1980', 'Jul 1981', 'Jul 1990',
-                         'Mar 2001', 'Dec 2007', 'Mar 2020']
+                         'Mar 2001', 'Dec 2007', 'Feb 2020']
 
     maxdate_rng_lst = [('1929-7-1', '1929-10-30'),
                        ('1937-3-1', '1937-7-1'),
@@ -226,7 +226,7 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
     This function creates the HTML and JavaScript code for the dynamic
     visualization of the normalized peak plot of the last 15 recessions in the
     United States, from the Great Depression (Aug. 1929 - Mar. 1933) to the
-    most recent COVID-19 recession (Mar. 2020 - present).
+    most recent COVID-19 recession (Feb. 2020 - present).
 
     Args:
         frwd_mths_main (int): number of months forward from the peak to plot in
@@ -284,8 +284,8 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
         print('Updated end_date_str to ' + end_date_str2 + ' because ' +
               'original end_date_str ' + end_date_str + ' data was not ' +
               'available from Stooq.com')
-        end_date_str == end_date_str2
-        end_date = end_date.strptime(end_date_str, '%Y-%m-%d')
+        end_date_str = end_date_str2
+        end_date = dt.datetime.strptime(end_date_str, '%Y-%m-%d')
 
     rec_cds_list = []
     min_main_val_lst = []
