@@ -52,14 +52,20 @@ def validate(date_text):
 def test_html_fig(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
                   djia_end_date, download_from_internet, html_show,
                   matplotlib):
-    fig, end_date_str = djia.djia_npp(
-        frwd_mths_main=frwd_mths_main, bkwd_mths_main=bkwd_mths_main,
-        frwd_mths_max=frwd_mths_max, bkwd_mths_max=bkwd_mths_max,
-        djia_end_date=djia_end_date,
-        download_from_internet=download_from_internet,
-        html_show=html_show, matplotlib=matplotlib)
-    assert fig
-    assert validate(end_date_str)
+    # The case when djia_end_date == 'today' and download_from_internet ==
+    # False must be skipped because we don't have the data saved for every date
+    if djia_end_date == 'today' and not download_from_internet:
+        pytest.skip('Invalid case')
+        assert True
+    else:
+        fig, end_date_str = djia.djia_npp(
+            frwd_mths_main=frwd_mths_main, bkwd_mths_main=bkwd_mths_main,
+            frwd_mths_max=frwd_mths_max, bkwd_mths_max=bkwd_mths_max,
+            djia_end_date=djia_end_date,
+            download_from_internet=download_from_internet,
+            html_show=html_show, matplotlib=matplotlib)
+        assert fig
+        assert validate(end_date_str)
     # assert html file exists
     # assert djia series csv file exists
     # assert djia ColumnDataSource source DataFrame csv file exists
