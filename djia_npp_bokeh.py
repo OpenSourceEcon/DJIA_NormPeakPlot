@@ -243,7 +243,7 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
             otherwise read date in from local directory
         html_show (bool): =True if open dynamic visualization in browser once
             created
-        matplotlib (bool):
+        matplotlib (bool): =True if save matplotlib .png figure
 
     Other functions and files called by this function:
         get_djia_data()
@@ -468,6 +468,9 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
 
     if html_show:
         show(fig)
+
+    if matplotlib:
+        # Put matplotlib code here
 
     return fig, end_date_str
 
