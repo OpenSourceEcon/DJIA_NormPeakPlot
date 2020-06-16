@@ -19,6 +19,8 @@ import datetime as dt
 import djia_npp_bokeh as djia
 
 # Create function to validate datetime text
+
+
 def validate(date_text):
     try:
         if date_text != dt.datetime.strptime(
@@ -44,9 +46,9 @@ def validate(date_text):
 @pytest.mark.parametrize('frwd_mths_max', [12])
 @pytest.mark.parametrize('bkwd_mths_max', [4])
 @pytest.mark.parametrize('djia_end_date', ['today', '2020-06-09'])
-@pytest.mark.parametrize('download_from_internet', ['True', 'False'])
-@pytest.mark.parametrize('html_show', ['False'])
-@pytest.mark.parametrize('matplotlib', ['False'])
+@pytest.mark.parametrize('download_from_internet', [True, False])
+@pytest.mark.parametrize('html_show', [False])
+@pytest.mark.parametrize('matplotlib', [False])
 def test_html_fig(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
                   djia_end_date, download_from_internet, html_show,
                   matplotlib):
@@ -105,9 +107,10 @@ def test_html_fig(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
 #     test_data, ids=['Pct Diff', 'Diff', 'CBO', 'Levels w reform',
 #                     'Levels w/o reform', 'Vertical line included',
 #                     'Plot title included'])
-# def test_html_fig_script(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
-#                   djia_end_date, download_from_internet, html_show,
-#                   matplotlib):
+# def test_html_fig_script(frwd_mths_main, bkwd_mths_main, frwd_mths_max,
+#                          bkwd_mths_max,
+#                          djia_end_date, download_from_internet, html_show,
+#                          matplotlib):
 #     fig = output_plots.plot_aggregates(
 #         base_tpi, base_params, reform_tpi=reform_tpi,
 #         reform_params=reform_params, var_list=['Y', 'r'],
