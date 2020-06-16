@@ -15,7 +15,6 @@ install:
   - source activate djia-npp-dev
   - conda env update -f environment.yml
   - pip install codecov
-  - pip install -e .
 
 # command to run tests, e.g. python setup.py test
 script:

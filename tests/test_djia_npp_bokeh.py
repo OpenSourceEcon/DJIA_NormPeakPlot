@@ -39,10 +39,10 @@ def validate(date_text):
 
 # Test that djia_npp() function returns html figure and valid string and saves
 # html figure file and two csv files.
-@pytest.mark.parametrize('frwd_mths_main', [5, 7])
-@pytest.mark.parametrize('bkwd_mths_main', [2, 3])
-@pytest.mark.parametrize('frwd_mths_max', [8, 12])
-@pytest.mark.parametrize('bkwd_mths_max', [4, 6])
+@pytest.mark.parametrize('frwd_mths_main', [6])
+@pytest.mark.parametrize('bkwd_mths_main', [1])
+@pytest.mark.parametrize('frwd_mths_max', [12])
+@pytest.mark.parametrize('bkwd_mths_max', [4])
 @pytest.mark.parametrize('djia_end_date', ['today', '2020-06-09'])
 @pytest.mark.parametrize('download_from_internet', ['True', 'False'])
 @pytest.mark.parametrize('html_show', ['False'])
