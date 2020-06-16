@@ -471,6 +471,7 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
 
     if matplotlib:
         # Put matplotlib code here
+        fig_matpl = 2
 
     return fig, end_date_str
 
