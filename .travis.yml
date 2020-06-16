@@ -14,7 +14,6 @@ install:
   - conda create -n djia-npp-dev python=$TRAVIS_PYTHON_VERSION
   - source activate djia-npp-dev
   - conda env update -f environment.yml
-  - pip install codecov
 
 # command to run tests, e.g. python setup.py test
 script:

@@ -6,3 +6,4 @@ dependencies:
 - pandas-datareader>=0.8.1
 - bokeh>=2.0.2
 - pytest
+- coverage
