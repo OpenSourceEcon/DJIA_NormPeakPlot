@@ -221,7 +221,7 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
 
 def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
              bkwd_mths_max=3, djia_end_date='today',
-             download_from_internet=True, html_show=True, matplotlib=False):
+             download_from_internet=True, html_show=True):
     '''
     This function creates the HTML and JavaScript code for the dynamic
     visualization of the normalized peak plot of the last 15 recessions in the
@@ -243,7 +243,6 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
             otherwise read date in from local directory
         html_show (bool): =True if open dynamic visualization in browser once
             created
-        matplotlib (bool): =True if save matplotlib .png figure
 
     Other functions and files called by this function:
         get_djia_data()
@@ -468,10 +467,6 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
 
     if html_show:
         show(fig)
-
-    if matplotlib:
-        # Put matplotlib code here
-        fig_matpl = 2
 
     return fig, end_date_str
 
