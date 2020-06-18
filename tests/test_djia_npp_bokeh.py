@@ -47,10 +47,8 @@ def validate(date_text):
 @pytest.mark.parametrize('djia_end_date', ['today', '2020-06-09'])
 @pytest.mark.parametrize('download_from_internet', [True, False])
 @pytest.mark.parametrize('html_show', [False])
-@pytest.mark.parametrize('matplotlib', [False])
 def test_html_fig(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
-                  djia_end_date, download_from_internet, html_show,
-                  matplotlib):
+                  djia_end_date, download_from_internet, html_show):
     # The case when djia_end_date == 'today' and download_from_internet ==
     # False must be skipped because we don't have the data saved for every date
     if djia_end_date == 'today' and not download_from_internet:
@@ -62,7 +60,7 @@ def test_html_fig(frwd_mths_main, bkwd_mths_main, frwd_mths_max, bkwd_mths_max,
             frwd_mths_max=frwd_mths_max, bkwd_mths_max=bkwd_mths_max,
             djia_end_date=djia_end_date,
             download_from_internet=download_from_internet,
-            html_show=html_show, matplotlib=matplotlib)
+            html_show=html_show)
         assert fig
         assert validate(end_date_str)
     # assert html file exists
