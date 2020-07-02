@@ -219,8 +219,8 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
             maxdate_rng_lst)
 
 
-def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
-             bkwd_mths_max=3, djia_end_date='today',
+def djia_npp(frwd_mths_main=12, bkwd_mths_main=2, frwd_mths_max=24,
+             bkwd_mths_max=6, djia_end_date='today',
              download_from_internet=True, html_show=True):
     '''
     This function creates the HTML and JavaScript code for the dynamic
@@ -401,13 +401,14 @@ def djia_npp(frwd_mths_main=6, bkwd_mths_main=1, frwd_mths_max=12,
     days_frm_pk_mth = []
     mths_frm_pk = []
     for i in range(-bkwd_mths_max, frwd_mths_max + 1):
-        days_frm_pk_mth.append(int(np.round(i * 364.25 / 12)))
-        if i < 0:
-            mths_frm_pk.append(str(i) + 'mth')
-        elif i == 0:
-            mths_frm_pk.append('peak')
-        elif i > 0:
-            mths_frm_pk.append('+' + str(i) + 'mth')
+        if i % 2 == 0:
+            days_frm_pk_mth.append(int(np.round(i * 364.25 / 12)))
+            if i < 0:
+                mths_frm_pk.append(str(i) + 'mth')
+            elif i == 0:
+                mths_frm_pk.append('peak')
+            elif i > 0:
+                mths_frm_pk.append('+' + str(i) + 'mth')
 
     mth_label_dict = dict(zip(days_frm_pk_mth, mths_frm_pk))
     fig.xaxis.ticker = days_frm_pk_mth
