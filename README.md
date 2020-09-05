@@ -1,12 +1,12 @@
 [![OSE Lab cataloged](https://img.shields.io/badge/OSE%20Lab-catalogued-critical)](https://www.oselab.org/gallery)
-[![Python 3.7.4+](https://img.shields.io/badge/python-3.7.4%2B-blue.svg)](https://www.python.org/downloads/release/python-374/)
+[![Python 3.8.2+](https://img.shields.io/badge/python-3.8.2%2B-blue.svg)](https://www.python.org/downloads/release/python-382/)
 [![Build Status](https://travis-ci.org/OpenSourceEcon/DJIA_NormPeakPlot.svg?branch=master)](https://travis-ci.org/OpenSourceEcon/DJIA_NormPeakPlot)
 [![Codecov](https://codecov.io/gh/OpenSourceEcon/DJIA_NormPeakPlot/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenSourceEcon/DJIA_NormPeakPlot)
 
 # Normalized Peak Plot of Dow Jones Industrial Average (DJIA)
 The code in this repository allows the user to create a normalized peak plot of the Dow Jones Industrial Average (DJIA) over the last 15 recessions, from the Great Depression (Aug. 1929 to Mar. 1933) to the current COVID-19 recession (Feb. 2020 to present). The dynamic version of this plot, which is updated regularly, is available to manipulate and explore at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth). The core maintainer of this repository is [Richard Evans](https://sites.google.com/site/rickecon/) ([@RickEcon](https://github.com/rickecon)).
 
-A normalized peak plot takes the maximum level of the DJIA at the beginning of a recession (within two months of the NBER declared beginning month) and normalizes the entire series so that the value at that peak equals 1.0. As such, the normalized time series shows the percent change from that peak. This is an intuitive way to compare the progression of average stock prices across recessions. The following figure is a screen shot of the normalized peak plot of the DJIA from July 1, 2020.
+A normalized peak plot takes the maximum level of the DJIA at the beginning of a recession (within two months of the NBER declared beginning month) and normalizes the entire series so that the value at that peak equals 1.0. As such, the normalized time series shows the percent change from that peak. This is an intuitive way to compare the progression of average stock prices across recessions. The following figure is a screen shot of the normalized peak plot of the DJIA from September 4, 2020.
 
 ![](readme_images/DJIA_NPP_mth_full.png)
 
@@ -36,9 +36,9 @@ The most standard way to successfully run this code if you are using the [Anacon
     djia.djia_npp(12, 2, 24, 6, '2020-07-01')
     ```
 7. Executing the function [`djia_npp()`](djia_npp_bokeh.py#L222) will result in three output objects: the dynamic visualization HTML file, the original time series of the DJIA, and the organized dataset of each recession's variables time series for the periods specified in the function inputs.
-    * [**images/DJIA_NPP_mth_[YYYY-mm-dd].html**](images/DJIA_NPP_mth_2020-07-01.html). This is the dynamic visualization. The code in the file is a combination of HTML and JavaScript. You can view this visualization by opening the file in a web browser window. A version of this visualization is updated regularly on the web at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth).
-    * [**data/djia_close_[YYYY-mm-dd].csv**](data/djia_close_2020-07-01.csv). A comma separated values data file of the original time series of the DJIA from 1896-05-27 to whatever end date is specified in the [`djia_npp()`](djia_npp_bokeh.py#L222) function arguments, which is also the final 10 characters of the file name `YYYY-mm-dd`.
-    * [**data/djia_close_pk_[YYYY-mm-dd].csv**](data/djia_close_pk_2020-07-01.csv).
+    * [**images/DJIA_NPP_mth_[YYYY-mm-dd].html**](images/DJIA_NPP_mth_2020-09-04.html). This is the dynamic visualization. The code in the file is a combination of HTML and JavaScript. You can view this visualization by opening the file in a web browser window. A version of this visualization is updated regularly on the web at [https://www.oselab.org/gallery/djia_npp_mth](https://www.oselab.org/gallery/djia_npp_mth).
+    * [**data/djia_close_[YYYY-mm-dd].csv**](data/djia_close_2020-09-04.csv). A comma separated values data file of the original time series of the DJIA from 1896-05-27 to whatever end date is specified in the [`djia_npp()`](djia_npp_bokeh.py#L222) function arguments, which is also the final 10 characters of the file name `YYYY-mm-dd`.
+    * [**data/djia_close_pk_[YYYY-mm-dd].csv**](data/djia_close_pk_2020-09-04.csv).
 
 ## 2. Functionality of the dynamic visualization
 This dynamic visualization allows the user to customize some different views and manipulations of the data using the following functionalities. The default view of the visualization is shown above.
