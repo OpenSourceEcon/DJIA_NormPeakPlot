@@ -248,7 +248,7 @@ def djia_npp(frwd_mths_main=21, bkwd_mths_main=4, frwd_mths_max=48,
         get_djia_data()
 
     Files created by this function:
-       images/DJIA_NPP_mth_[yyyy-mm-dd].html
+       images/djia_npp_[yyyy-mm-dd].html
 
     Returns: None
     '''
@@ -311,7 +311,7 @@ def djia_npp(frwd_mths_main=21, bkwd_mths_main=4, frwd_mths_max=48,
 
     # Create Bokeh plot of DJIA normalized peak plot figure
     fig_title = 'Progression of DJIA in last 15 recessions'
-    filename = ('images/DJIA_NPP_mth_' + end_date_str + '.html')
+    filename = ('images/djia_npp_' + end_date_str + '.html')
     output_file(filename, title=fig_title)
 
     # Format the tooltip
