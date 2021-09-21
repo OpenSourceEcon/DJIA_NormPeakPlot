@@ -2,7 +2,7 @@
 This module downloads the Dow Jones Industrial Average (DJIA) daily closing
 price data series from either Stooq.com or from this directory and
 organizes it into 15 series, one for each of the last 15 recessions--
-from the current 2020 Coronavirus recession to the Great Depression of
+from the most recent 2020 Coronavirus recession to the Great Depression of
 1929. It then creates a normalized peak plot of the DJIA for each of the last
 15 recessions using the Bokeh plotting library.
 
@@ -129,7 +129,7 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
          '1990-1991',  # (Jul 1990 - Mar 1991)
          '2001',       # (Mar 2001 - Nov 2001)
          '2007-2009',  # (Dec 2007 - Jun 2009) Great Recession
-         '2020-pres']  # (Feb 2020 - present) Coronavirus recession
+         '2020-2020']  # (Feb 2020 - Apr 2020) Coronavirus recession
 
     rec_label_yrmth_lst = ['Aug 1929 - Mar 1933',  # Great Depression
                            'May 1937 - Jun 1938',
@@ -145,7 +145,7 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
                            'Jul 1990 - Mar 1991',
                            'Mar 2001 - Nov 2001',
                            'Dec 2007 - Jun 2009',  # Great Recession
-                           'Feb 2020 - present']  # Coronavirus recess'n
+                           'Feb 2020 - Apr 2020']  # Coronavirus recess'n
 
     rec_beg_yrmth_lst = ['Aug 1929', 'May 1937', 'Feb 1945', 'Nov 1948',
                          'Jul 1953', 'Aug 1957', 'Apr 1960', 'Dec 1969',
@@ -219,7 +219,7 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
             maxdate_rng_lst)
 
 
-def djia_npp(frwd_mths_main=18, bkwd_mths_main=4, frwd_mths_max=24,
+def djia_npp(frwd_mths_main=21, bkwd_mths_main=4, frwd_mths_max=48,
              bkwd_mths_max=6, djia_end_date='today',
              download_from_internet=True, html_show=True):
     '''
@@ -248,7 +248,7 @@ def djia_npp(frwd_mths_main=18, bkwd_mths_main=4, frwd_mths_max=24,
         get_djia_data()
 
     Files created by this function:
-       images/DJIA_NPP_mth_[yyyy-mm-dd].html
+       images/djia_npp_[yyyy-mm-dd].html
 
     Returns: None
     '''
@@ -311,7 +311,7 @@ def djia_npp(frwd_mths_main=18, bkwd_mths_main=4, frwd_mths_max=24,
 
     # Create Bokeh plot of DJIA normalized peak plot figure
     fig_title = 'Progression of DJIA in last 15 recessions'
-    filename = ('images/DJIA_NPP_mth_' + end_date_str + '.html')
+    filename = ('images/djia_npp_' + end_date_str + '.html')
     output_file(filename, title=fig_title)
 
     # Format the tooltip
@@ -401,7 +401,7 @@ def djia_npp(frwd_mths_main=18, bkwd_mths_main=4, frwd_mths_max=24,
     days_frm_pk_mth = []
     mths_frm_pk = []
     for i in range(-bkwd_mths_max, frwd_mths_max + 1):
-        if i % 2 == 0:
+        if i % 4 == 0:
             days_frm_pk_mth.append(int(np.round(i * 364.25 / 12)))
             if i < 0:
                 mths_frm_pk.append(str(i) + 'mth')
