@@ -219,8 +219,8 @@ def get_djia_data(frwd_days_max, bkwd_days_max, end_date_str,
             maxdate_rng_lst)
 
 
-def djia_npp(frwd_mths_main=21, bkwd_mths_main=4, frwd_mths_max=48,
-             bkwd_mths_max=6, djia_end_date='today',
+def djia_npp(frwd_mths_main=36, bkwd_mths_main=4, frwd_mths_max=60,
+             bkwd_mths_max=8, djia_end_date='today',
              download_from_internet=True, html_show=True):
     '''
     This function creates the HTML and JavaScript code for the dynamic
